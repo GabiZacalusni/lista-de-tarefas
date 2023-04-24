@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400&display=swap"
+      rel="stylesheet"
+    />
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Lista de Tarefas</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Lista de Tarefas do Dia</h1>
+      </header>
+
+      <section class="card">
+        <fieldset>
+          <legend>Insira aqui suas tarefas diárias</legend>
+          <form>
+            <label>
+              Tarefa a fazer:
+              <select id="tarefa_selecionada">
+                <option value="" disabled selected>Selecione uma tarefa</option>
+                <option value="limpeza">Limpar banheiro</option>
+                <option value="treino">Treinar</option>
+                <option value="estudo">Estudar</option>
+              </select>
+            </label>
+
+            <label>
+              Horário:
+              <input type="time" id="hora_da_tarefa" />
+            </label>
+
+            <label>
+              Data:
+              <input type="date" id="data_da_tarefa" />
+            </label>
+
+            <button id="botaoAdicionar" onclick="adicionar()" type="button">
+              Adicionar<img src="img/add.png.crdownload" width="25" height="25"
+            </button>
+            <button
+              id="botaoCancelar"
+              onclick="limparMinhasTarefas()"
+              type="button"
+            >
+              Limpar<img src="img/trash.png.crdownload" width="15" height="15"
+            </button>
+          </form>
+        </fieldset>
+      </section>
+
+      <section class="card">
+        <fieldset>
+          <legend>Minhas Tarefas</legend>
+          <table border="1">
+            <thead>
+              <th>Tarefa</th>
+              <th>Horário</th>
+              <th>Data</th>
+              <th>Observações</th>
+              <th>Ações</th>
+            </thead>
+            <tbody id="tabela_tarefas"></tbody>
+          </table>
+        </fieldset>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
